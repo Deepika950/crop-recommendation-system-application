@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crop Recommendation System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f2fdf2;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(120deg, #4CAF50, #2e7d32);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 3em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    header button {
+      background: #ffffff;
+      color: #4CAF50;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    header button:hover {
+      background: #e0f2e9;
+    }
+
+    .rl {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .rl a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .rl a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #388e3c;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border-left: 5px solid #4CAF50;
+      padding-left: 10px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .feature-item {
+      flex: 1 1 220px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #c8e6c9;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+
+    form input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    form button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #2e7d32;
+    }
+
+    .testimonials {
+      margin-top: 40px;
+    }
+
+    .testimonials p {
+      background: #e8f5e9;
+      padding: 15px 20px;
+      border-left: 6px solid #66bb6a;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .feature-list {
+        flex-direction: column;
+      }
+
+      .rl {
+        position: static;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      header button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Crop Recommendation System</h1>
+    <p>Empowering Farmers with Smart Crop Choices</p>
+    <button onclick="window.location.href='/register'">Get Started</button>
+    <section id="input-section" class="rl">
+        <a href="register">Register</a>
+        <a href="login">Login</a>
+    </section>
+  </header>
+
+  <div class="container">
+    
+    <section class="features">
+      <h2>Why Use Our System?</h2>
+      <div class="feature-list">
+        <div class="feature-item">🌍 Location-Specific Advice</div>
+        <div class="feature-item">🧪 Soil Parameter Input</div>
+        <div class="feature-item">🤖 AI-Powered Predictions</div>
+        <div class="feature-item">📊 Real-Time Recommendations</div>
+      </div>
+    </section>
+
+    <section class="sample">
+      <h2>Sample Crop Suggestions</h2>
+      <table>
+        <tr>
+          <th>Soil Type</th>
+          <th>Climate Condition</th>
+          <th>Recommended Crop</th>
+        </tr>
+        <tr>
+          <td>Loamy</td>
+          <td>Warm & Humid</td>
+          <td>Rice</td>
+        </tr>
+        <tr>
+          <td>Sandy</td>
+          <td>Hot & Dry</td>
+          <td>Millet</td>
+        </tr>
+        <tr>
+          <td>Clay</td>
+          <td>Wet & Cool</td>
+          <td>Wheat</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="testimonials">
+      <form method="POST">
+        {% csrf_token %}
+        <h2>Share your opinion about this system</h2>
+        <input type="text" placeholder="Your thoughts..." name="te" required />
+        <button type="submit">Submit</button>
+      </form>
+
+      <h2>What Farmers Say</h2>
+      <p><em>"This tool helped me choose the right crop for the season—my yield increased by 25%!"</em> – Ramesh, Maharashtra</p>
+      {% for x in opinions %}
+        <p><em>"{{ x.op }}"</em></p>
+      {% empty %}
+        <p>No opinions yet. Be the first to share!</p>
+      {% endfor %}
+    </section>
+
+  </div>
+
+  <footer>
+    
+  </footer>
+
+</body>
+</html>
