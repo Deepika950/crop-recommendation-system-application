@@ -80,9 +80,13 @@ WSGI_APPLICATION = 'crop_rs.wsgi.application'
 
 
 if os.environ.get("RENDER"):
+
     DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600)
+        'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'  # fallback to SQLite
+        )
     }
+
 else:
     DATABASES = {
         'default': {
